@@ -1,0 +1,4 @@
+interface:
+  display_name: "Rewrite · 科研改写"
+  short_description: "修复科研段落中的概念断点和句间逻辑，保留原意、引用与结论强度"
+  default_prompt: "使用 $rewrite 检查并重写这段科研文字，补清理解所需的关系，保留事实和引用。"

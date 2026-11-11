@@ -1,0 +1,4 @@
+interface:
+  display_name: "Paperwrite · 论文写作"
+  short_description: "依据研究大纲与可核验证据撰写论文，讲清技术机制、方法关系与适用边界"
+  default_prompt: "使用 $paperwrite 根据现有大纲与文献包撰写指定小节，讲清问题、机制、比较和结论。"

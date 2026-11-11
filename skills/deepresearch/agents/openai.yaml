@@ -1,0 +1,4 @@
+interface:
+  display_name: "Deepresearch · 研究调研"
+  short_description: "从关键词组织研究问题、核验原文证据并形成可供写作的大纲与文献包"
+  default_prompt: "使用 $deepresearch 梳理这个研究方向，先确认问题范围和章节结构，再形成带证据的大纲。"
