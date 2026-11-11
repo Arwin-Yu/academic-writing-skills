@@ -5,7 +5,7 @@
 
 ## 原文核验与复用
 
-deepresearch与paperwrite介绍具体工作前均执行。核对作者、题名及实际阅读版本，按拟写内容选择原文位置：
+deepresearch、write-review 与 paperwrite 介绍具体工作前均执行。核对作者、题名及实际阅读版本，按拟写内容选择原文位置：
 
 | 拟写内容 | 至少核对的原文 | 表述边界 |
 |---|---|---|
@@ -28,7 +28,7 @@ deepresearch与paperwrite介绍具体工作前均执行。核对作者、题名�
 3. **待核验与排除记录**：列出尚缺什么，或为什么不达标/不相关。
 4. **大纲映射与检查结果**：TeX 节点对应哪些文献和证据，哪些问题仍待补充。
 
-## references.json：给 cite 读取
+## references.json：供写作与 cite 读取
 
 顶层固定字段：
 

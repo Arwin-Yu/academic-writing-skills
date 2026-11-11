@@ -1,0 +1,4 @@
+interface:
+  display_name: "Write Review · 综述写作"
+  short_description: "依据段落大纲和文献证据撰写综述，提炼核心论点并修复论证与理解断点"
+  default_prompt: "使用 $write-review，根据已有段落大纲与文献证据提炼核心论点，撰写指定范围的综述正文并检查论证。"

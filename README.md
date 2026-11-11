@@ -1,12 +1,13 @@
 # Academic Writing Skills
 
-我们在深度学习综述写作中协作迭代的科研写作技能，重点解决：文献依据不清、技术解释难懂、方法堆砌、段落缺少因果、总结重复，以及带有AI套话的表述。
+面向 AI 领域科研写作的技能，重点解决：文献依据不清、技术解释难懂、方法堆砌、段落缺少因果、总结重复，以及带有AI套话的表述。
 
 ## 已收录
 
 | 技能 | 用途 | 主要交付 |
 | --- | --- | --- |
 | [deepresearch](skills/deepresearch/SKILL.md) | 从关键词梳理研究问题、设计章节、核验论文并综合进展 | 章节大纲及带摘要、原文位置的文献包 |
+| [write-review](skills/write-review/SKILL.md) | 根据段落或小节大纲及文献证据撰写综述 | 有核心论点、机制解释、证据边界及必要缺口说明的正文 |
 | [paperwrite](skills/paperwrite/SKILL.md) | 依据大纲和证据撰写科研正文 | 讲清问题、设计原因、方法联系与适用边界的段落 |
 | [rewrite](skills/rewrite/SKILL.md) | 改写难懂段落、补清逻辑、去除AI套话 | 保留事实与结论强度的改稿及必要检查记录 |
 
@@ -14,21 +15,22 @@
 
 ## 安装
 
-把 `skills/` 内三个目录一起放到目标项目的 `.agents/skills/`，保持它们并列。`paperwrite` 会使用另外两个技能的参考文件，因此本版建议整组安装。
+把需要的技能目录放到目标项目的 `.agents/skills/`，保持目录名。`write-review` 可独立安装；与 `deepresearch` 配合时复用已有大纲和文献包。`paperwrite` 使用 `deepresearch` 与 `rewrite` 的参考文件，使用它时应将这三个目录并列安装。
 
 在这个仓库的根目录执行以下命令，可安装到一个新目录；目标已存在时先检查差异，避免覆盖本地修改：
 
 ```bash
 mkdir -p /path/to/your-project/.agents/skills
-cp -R skills/deepresearch skills/paperwrite skills/rewrite /path/to/your-project/.agents/skills/
+cp -R skills/deepresearch skills/write-review skills/paperwrite skills/rewrite /path/to/your-project/.agents/skills/
 ```
 
-也可整组安装到用户级 `~/.codex/skills/`。安装后开启新的会话，确认三个技能被发现。搜索、论文读取、TeX编译等能力由实际使用环境提供，仓库不附带这些工具或任何账号凭据。
+也可整组安装到用户级 `~/.codex/skills/`。安装后开启新的会话，确认所安装的技能被发现。搜索、论文读取、TeX编译等能力由实际使用环境提供，仓库不附带这些工具或任何账号凭据。
 
 ## 使用
 
 - 调研：`使用 $deepresearch，研究关键词是……，先给出范围和章节安排供我确认。`
-- 写作：`使用 $paperwrite，根据现有章节大纲和文献包撰写……小节。`
+- 综述写作：`使用 $write-review，根据现有段落大纲和文献包提炼核心论点，撰写……段落或小节。`
+- 原有写作流程：`使用 $paperwrite，根据现有章节大纲和文献包撰写……小节。`
 - 改写：`使用 $rewrite，解释并修复下面段落的理解断点，不改变事实和结论强度。`
 
 普通交互式小修改可以直接按反馈处理，不必每次运行完整技能流程。大纲确认、单语/双语、输出文件和是否只在对话中测试，均沿用用户本轮要求及项目已有决定。
@@ -54,6 +56,6 @@ python3 skills/rewrite/scripts/check_review.py /path/to/run/review.json
 
 ## 来源与适配
 
-这三个技能来自本次综述写作中协作开发的独立草案，未搬运原项目的16个通用技能、论文正文、PDF、参考文献库或私人配置。发布副本保留原有流程与选材标准，仅适配项目路径、实际稿件语言和安装位置，详见[适配说明](docs/portability.md)。
+初版三个技能来自综述写作中协作开发的独立草案。本轮新增 `write-review`，以段落论点组织综述正文，并更新 `deepresearch` 的论据记录要求；`paperwrite` 保留供原有流程使用。仓库不附带原项目的论文正文、PDF、参考文献库或私人配置。选材标准与本轮适配范围详见[适配说明](docs/portability.md)。
 
 现有技能头部声明的许可为 **CC-BY-NC-SA-4.0**，本次整理保留该声明，参见[许可说明](LICENSE.md)。
