@@ -1,0 +1,4 @@
+interface:
+  display_name: "Write Paper · 原创论文写作"
+  short_description: "组织不少于40篇文献及逐篇引用计划，自动选择章节模板撰写AI原创论文"
+  default_prompt: "使用 $write-paper，复用或准备文献库与引用计划，判断当前写作章节，按对应段落模板起草并核查正文。"
