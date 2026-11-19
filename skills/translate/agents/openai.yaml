@@ -1,0 +1,4 @@
+interface:
+  display_name: "Translate · AI论文中译英"
+  short_description: "将AI论文中文草稿译为简洁自然的学术英文，保留技术含义与论断边界"
+  default_prompt: "使用 $translate 将以下AI论文中文段落翻译为简洁、自然的学术英文，保留原意、术语和引用，不使用破折号。"

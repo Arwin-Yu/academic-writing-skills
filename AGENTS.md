@@ -1,6 +1,6 @@
 # Academic writing skills
 
-This repository packages five collaboratively refined skills: deepresearch, write-paper, write-review, paperwrite, and rewrite.
+This repository packages six collaboratively refined skills: deepresearch, write-paper, write-review, paperwrite, rewrite, and translate.
 
 When maintaining a skill, edit its instructions without starting the research or manuscript-writing workflow. Preserve verified-source requirements, user-authorized scope, and the distinction between a writing plan and manuscript prose.
 

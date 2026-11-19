@@ -11,18 +11,19 @@
 | [write-review](skills/write-review/SKILL.md) | 根据段落或小节大纲及文献证据撰写综述 | 有核心论点、机制解释、证据边界及必要缺口说明的正文 |
 | [paperwrite](skills/paperwrite/SKILL.md) | 依据大纲和证据撰写科研正文 | 讲清问题、设计原因、方法联系与适用边界的段落 |
 | [rewrite](skills/rewrite/SKILL.md) | 改写难懂段落、补清逻辑、去除AI套话 | 保留事实与结论强度的改稿及必要检查记录 |
+| [translate](skills/translate/SKILL.md) | 将 AI 论文中文段落或草稿翻译为简洁、自然的学术英文 | 保留论点、技术含义、引用和限定条件的英文正文及必要说明 |
 
 `cite`（基于文献库匹配引用）和 `review`（投稿前检查）仍在计划中，本仓库没有将它们包装为已完成技能。
 
 ## 安装
 
-把需要的技能目录放到目标项目的 `.agents/skills/`，保持目录名。`write-paper` 与 `write-review` 可独立安装；与 `deepresearch` 配合时复用已有调研和文献包。`write-paper` 自带文献流程与六章模板，按当前任务只读取相关模板。`paperwrite` 使用 `deepresearch` 与 `rewrite` 的参考文件，使用它时应将这三个目录并列安装。
+把需要的技能目录放到目标项目的 `.agents/skills/`，保持目录名。`write-paper`、`write-review` 与 `translate` 可独立安装；与 `deepresearch` 配合时复用已有调研和文献包。`write-paper` 自带文献流程与六章模板，按当前任务只读取相关模板。`paperwrite` 使用 `deepresearch` 与 `rewrite` 的参考文件，使用它时应将这三个目录并列安装。
 
 在这个仓库的根目录执行以下命令，可安装到一个新目录；目标已存在时先检查差异，避免覆盖本地修改：
 
 ```bash
 mkdir -p /path/to/your-project/.agents/skills
-cp -R skills/deepresearch skills/write-paper skills/write-review skills/paperwrite skills/rewrite /path/to/your-project/.agents/skills/
+cp -R skills/deepresearch skills/write-paper skills/write-review skills/paperwrite skills/rewrite skills/translate /path/to/your-project/.agents/skills/
 ```
 
 也可整组安装到用户级 `~/.codex/skills/`。安装后开启新的会话，确认所安装的技能被发现。搜索、论文读取、TeX编译等能力由实际使用环境提供，仓库不附带这些工具或任何账号凭据。
@@ -34,6 +35,7 @@ cp -R skills/deepresearch skills/write-paper skills/write-review skills/paperwri
 - 综述写作：`使用 $write-review，根据现有段落大纲和文献包提炼核心论点，撰写……段落或小节。`
 - 原有写作流程：`使用 $paperwrite，根据现有章节大纲和文献包撰写……小节。`
 - 改写：`使用 $rewrite，解释并修复下面段落的理解断点，不改变事实和结论强度。`
+- 中译英：`使用 $translate，将下面的 AI 论文中文段落翻译为简洁、自然的学术英文，保留原意和引用，不使用破折号。`
 
 普通交互式小修改可以直接按反馈处理，不必每次运行完整技能流程。大纲确认、单语/双语、输出文件和是否只在对话中测试，均沿用用户本轮要求及项目已有决定。
 
@@ -60,6 +62,6 @@ python3 skills/rewrite/scripts/check_review.py /path/to/run/review.json
 
 ## 来源与适配
 
-初版三个技能来自综述写作中协作开发的独立草案。随后加入 `write-review` 与 `write-paper`，分别支持综述和原创论文写作，并完善 `deepresearch` 的逐篇记录要求；`paperwrite` 保留供原有流程使用。仓库不附带原项目的论文正文、PDF、参考文献库或私人配置。选材标准与本轮适配范围详见[适配说明](docs/portability.md)。
+初版三个技能来自综述写作中协作开发的独立草案。随后加入 `write-review` 与 `write-paper`，分别支持综述和原创论文写作，并完善 `deepresearch` 的逐篇记录要求；`paperwrite` 保留供原有流程使用。新增 `translate` 支持 AI 论文中译英。仓库不附带原项目的论文正文、PDF、参考文献库或私人配置。选材标准与本轮适配范围详见[适配说明](docs/portability.md)。
 
 现有技能头部声明的许可为 **CC-BY-NC-SA-4.0**，本次整理保留该声明，参见[许可说明](LICENSE.md)。
